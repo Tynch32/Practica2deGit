@@ -5,13 +5,14 @@ require('colors');
 
 const comando = argv[2];
 let respuesta;
+let nombre = argv[3];
 
 switch (comando) {
   case "listar":
     moduloProductos.listar();
     break;
   case "agregar":
-    let nombre = argv[3];
+   
     let marca = argv[4];
     let precio = +argv[5];
     let descuento = +argv[6] || 0;
@@ -51,7 +52,10 @@ switch (comando) {
     //moduloProductos.listar(respuesta);
     console.log(respuesta.green);
     break;
-
+   case "buscar":
+    
+     response = moduloProductos.buscar(nombre)
+     console.log(response)
   default:
     break;
 }
